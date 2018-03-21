@@ -25,6 +25,7 @@ import android.xmweather.com.xmweather.db.County;
 import android.xmweather.com.xmweather.db.Province;
 import android.xmweather.com.xmweather.gson.Forecast;
 import android.xmweather.com.xmweather.gson.Weather;
+import android.xmweather.com.xmweather.service.AutoUpdateService;
 import android.xmweather.com.xmweather.util.HttpUtil;
 import android.xmweather.com.xmweather.util.Utility;
 
@@ -233,8 +234,8 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
-       // Intent intent = new Intent(this, AutoUpdateService.class);
-        //startService(intent);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 
 }
